@@ -80,6 +80,10 @@
         </a>
       </li>
     </ul>
+    <h2>目录</h2>
+    <ul>
+      <li @click="jump('todolist')"><span>TodoList</span></li>
+    </ul>
   </div>
 </template>
 
@@ -88,7 +92,12 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to My Vue.js Demo App'
+    }
+  },
+  methods: {
+    jump: function (url) {
+      this.$router.push(url)
     }
   }
 }
@@ -107,7 +116,8 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
+a, span {
   color: #42b983;
+  cursor: pointer;
 }
 </style>
